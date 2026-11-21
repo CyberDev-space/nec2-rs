@@ -1,5 +1,9 @@
 # nec2-rs
 
+[![crates.io](https://img.shields.io/crates/v/nec2.svg)](https://crates.io/crates/nec2)
+[![docs.rs](https://img.shields.io/docsrs/nec2)](https://docs.rs/nec2)
+[![license](https://img.shields.io/crates/l/nec2.svg)](LICENSE)
+
 A Rust implementation of NEC-2, the Numerical Electromagnetics Code for wire antennas (method of moments).
 
 It is a port of nec2c 1.3.1, the public-domain C translation of NEC-2, checked report by report against nec2c. The license is MIT.
