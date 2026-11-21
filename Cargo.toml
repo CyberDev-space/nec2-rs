@@ -1,9 +1,9 @@
 [workspace]
 resolver = "3"
-members = ["crates/nec2", "crates/nec2-deck", "crates/nec2-cli"]
+members = ["crates/nec2", "crates/nec2-deck", "crates/nec2-cli", "crates/nec2-wasm"]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.85"
 license = "MIT"
@@ -14,8 +14,8 @@ categories = ["science", "simulation"]
 
 [workspace.dependencies]
 num-complex = "0.4"
-nec2 = { path = "crates/nec2", version = "0.1.0" }
-nec2-deck = { path = "crates/nec2-deck", version = "0.1.0" }
+nec2 = { path = "crates/nec2", version = "0.2.0" }
+nec2-deck = { path = "crates/nec2-deck", version = "0.2.0" }
 
 [profile.release]
 debug = 1

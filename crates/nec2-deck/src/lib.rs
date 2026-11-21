@@ -3,7 +3,8 @@
 //! A deck is the classic input of NEC-2: comment cards, the geometry section
 //! and the program cards that set parameters and request computations.
 //! [`run`] interprets a deck with the `nec2` engine and returns the report in
-//! the layout of the NEC-2 output file, as nec2c prints it.
+//! the layout of the NEC-2 output file, as nec2c prints it, and the main
+//! results as numbers.
 //!
 //! ```
 //! let deck = "\
@@ -19,11 +20,19 @@
 //! let output = nec2_deck::run(deck);
 //! assert!(output.error.is_none());
 //! assert!(output.report.contains("ANTENNA INPUT PARAMETERS"));
+//!
+//! // The same result as numbers: the impedance at the source.
+//! let solution = &output.jobs[0].solutions[0];
+//! let z = solution.sources[0].impedance;
+//! assert!((z.re - 84.8).abs() < 0.1 && (z.im - 48.0).abs() < 0.1);
 //! ```
 
 mod cfmt;
 mod parse;
 mod run;
 
-pub use nec2::OverlapCheck;
-pub use run::{Options, Output, run, run_with};
+pub use nec2::{
+    AverageGain, FarFieldRow, GainSample, GroundWaveRow, NormalizedGain, OverlapCheck, PortRecord, RadiationPattern,
+};
+pub use num_complex::Complex64;
+pub use run::{JobResults, Options, Output, PowerBudget, Segment, Solution, run, run_with};

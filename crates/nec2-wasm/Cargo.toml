@@ -1,0 +1,19 @@
+[package]
+name = "nec2-wasm"
+description = "NEC-2 antenna modeling for JavaScript: the nec2 engine compiled to WebAssembly"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+# The package goes to npm, built with scripts/build-wasm.sh.
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+nec2-deck.workspace = true
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+wasm-bindgen = "0.2"

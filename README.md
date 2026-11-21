@@ -10,7 +10,7 @@ It is a port of nec2c 1.3.1, the public-domain C translation of NEC-2, checked r
 
 ## Status
 
-Working and tested. The first release, 0.1.0, is on crates.io.
+Working and tested. The releases are on crates.io and, for JavaScript, on npm.
 
 | Feature | State |
 |---|---|
@@ -33,13 +33,14 @@ The test suite runs 143 decks and three decks that must stop with an error, and 
 
 nec2-rs is meant to replace NEC-2 engines without surprises. A deck that NEC-2 solves gives the same numbers, in the report layout of nec2c. Where NEC-2 is wrong the result is better, and where a model deserves no trust the report gains a line that begins with `WARNING:`. Where NEC-2 fails, or goes on to print values that are not numbers or numbers that mean nothing, the program stops with an error that names the cause. A run that ends without an error has only numbers in its report. Thirty-four of the test decks are there to hold this rule, and a test that damages decks at random compares nec2-rs with nec2c on the result. The details are in [docs/nec2c-deviations.md](docs/nec2c-deviations.md).
 
-## Crates
+## Packages
 
-| Crate | Contents |
+| Package | Contents |
 |---|---|
 | [`nec2`](https://crates.io/crates/nec2) | the engine: wires and patches, matrix fill and solution, fields. Computation only: no files, no threads. |
-| [`nec2-deck`](https://crates.io/crates/nec2-deck) | reads a deck of NEC cards, runs it and returns the report in the nec2c layout, and the plot data |
+| [`nec2-deck`](https://crates.io/crates/nec2-deck) | reads a deck of NEC cards, runs it and returns the report in the nec2c layout, the main results as numbers, and the plot data |
 | [`nec2-cli`](https://crates.io/crates/nec2-cli) | the command `nec2 -i deck.nec [-o report.out] [--overlap error\|warn\|off]` |
+| [`nec2-wasm`](https://www.npmjs.com/package/nec2-wasm) on npm | the same as `nec2-deck` for JavaScript: the engine in WebAssembly, for browsers and Node |
 
 ## Use
 
@@ -63,6 +64,21 @@ From Rust, a deck with `nec2-deck`:
 let deck = std::fs::read_to_string("deck.nec")?;
 let output = nec2_deck::run(&deck);
 print!("{}", output.report);
+
+// The main results are there as numbers too.
+for solution in &output.jobs[0].solutions {
+    println!("{} MHz: {} ohms", solution.frequency, solution.sources[0].impedance);
+}
+```
+
+From JavaScript, with [`nec2-wasm`](crates/nec2-wasm/README.md):
+
+```js
+import init, { run } from "nec2-wasm";
+
+await init();
+const output = run(deck);
+const [r, x] = output.jobs[0].solutions[0].sources[0].impedance;
 ```
 
 Or the engine itself, with `nec2` and `num-complex`:
@@ -100,6 +116,8 @@ scripts/gen-fixtures.sh
 ```
 
 `cargo test -p nec2-deck --test fixtures survey -- --ignored --nocapture` prints how every deck compares.
+
+`scripts/build-wasm.sh` builds the npm package in `target/npm/nec2-wasm`, and `node crates/nec2-wasm/tests/smoke.mjs` checks it.
 
 `crates/nec2-deck/tests/fuzz.rs` runs the decks after damaging them at random, alone or against nec2c. Its first lines say how.
 

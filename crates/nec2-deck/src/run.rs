@@ -20,6 +20,7 @@ use crate::parse::{CONTROL_CARDS, GEOMETRY_CARDS, Line, Lines, mnemonic, parse_c
 
 /// Result of running a deck.
 #[derive(Debug, Clone, PartialEq)]
+#[non_exhaustive]
 pub struct Output {
     /// The report, in the layout of the NEC-2 output file.
     pub report: String,
@@ -30,6 +31,70 @@ pub struct Output {
     /// file: one line of columns for every current, field point or pattern
     /// direction. `None` if the deck has no PL card.
     pub plot: Option<String>,
+    /// The results as numbers, for a program that would otherwise have to
+    /// read them out of the report: one entry for every job of the deck. A
+    /// deck has one job unless it uses NX cards. What was computed before an
+    /// error is kept.
+    pub jobs: Vec<JobResults>,
+    /// The warnings of the report, without the word `WARNING:`.
+    pub warnings: Vec<String>,
+}
+
+/// The numbers of one job: its structure and the solutions computed for it.
+#[derive(Debug, Clone, PartialEq, Default)]
+#[non_exhaustive]
+pub struct JobResults {
+    /// The segments of the structure, in the order of their numbers.
+    pub segments: Vec<Segment>,
+    /// The solutions for the currents in the order of the report: one for
+    /// every frequency of a sweep and for every direction of an incident
+    /// wave.
+    pub solutions: Vec<Solution>,
+}
+
+/// A segment of the structure, as it is after the GE card. Coordinates and
+/// radius are in metres.
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub struct Segment {
+    pub tag: i32,
+    pub end1: [f64; 3],
+    pub end2: [f64; 3],
+    pub radius: f64,
+}
+
+/// One solution for the currents and what was computed from it. The tables
+/// of the report for patches, near fields, charges and coupling have no
+/// counterpart here yet.
+#[derive(Debug, Clone, PartialEq, Default)]
+#[non_exhaustive]
+pub struct Solution {
+    /// Frequency in MHz.
+    pub frequency: f64,
+    /// For a plane wave: the direction it comes from (theta, phi) and its
+    /// polarization angle eta, in degrees.
+    pub incident_wave: Option<[f64; 3]>,
+    /// Voltage, current, impedance and power of every source: the table
+    /// "ANTENNA INPUT PARAMETERS".
+    pub sources: Vec<PortRecord>,
+    /// The same at the ports of networks and transmission lines.
+    pub network_ports: Vec<PortRecord>,
+    /// Current at the centre of every segment in amperes, in the order of
+    /// the segments.
+    pub currents: Vec<Complex64>,
+    /// The power budget. NEC-2 computes it for voltage sources.
+    pub power: Option<PowerBudget>,
+    /// The patterns that RP cards, or XQ cards with a pattern, asked for
+    /// with these currents, in the order of the requests.
+    pub patterns: Vec<RadiationPattern>,
+}
+
+/// Where the power of the sources goes, in watts.
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub struct PowerBudget {
+    pub input: f64,
+    pub radiated: f64,
+    pub structure_loss: f64,
+    pub network_loss: f64,
 }
 
 /// Adds a line of numbers to the plot data.
@@ -106,10 +171,11 @@ pub fn run(input: &str) -> Output {
 pub fn run_with(input: &str, options: &Options) -> Output {
     let mut out = String::new();
     let mut plot = None;
+    let mut jobs = Vec::new();
     let mut lines = Lines::new(input);
     let mut first_job = true;
     let error = loop {
-        match run_job(&mut lines, &mut out, &mut plot, first_job, options) {
+        match run_job(&mut lines, &mut out, &mut plot, &mut jobs, first_job, options) {
             Ok(()) => first_job = false,
             Err(Stop::End) => break None,
             Err(Stop::Error(message)) => {
@@ -123,14 +189,23 @@ pub fn run_with(input: &str, options: &Options) -> Output {
             }
         }
     };
-    Output { report: out, error, plot }
+    let warnings = out.lines().filter_map(|line| line.trim_start().strip_prefix("WARNING:"));
+    let warnings = warnings.map(|warning| warning.trim().to_string()).collect();
+    Output { report: out, error, plot, jobs, warnings }
 }
 
 /// Polarization names used in the excitation printouts.
 const HPOL: [&str; 3] = ["LINEAR", "RIGHT", "LEFT"];
 
 /// Runs one job: comments, geometry and program cards up to NX or EN.
-fn run_job(lines: &mut Lines, out: &mut String, plot: &mut Option<String>, first_job: bool, options: &Options) -> Flow {
+fn run_job(
+    lines: &mut Lines,
+    out: &mut String,
+    plot: &mut Option<String>,
+    jobs: &mut Vec<JobResults>,
+    first_job: bool,
+    options: &Options,
+) -> Flow {
     let Some(first) = lines.next_line() else {
         // Nothing after NX: the deck is complete.
         return if first_job { fail("\n\n  ERROR: THE INPUT CONTAINS NO CARDS") } else { Err(Stop::End) };
@@ -170,7 +245,16 @@ fn run_job(lines: &mut Lines, out: &mut String, plot: &mut Option<String>, first
         return fail("\n\n  THE STRUCTURE DATA ABOVE HOLD VALUES THAT ARE NOT NUMBERS");
     }
     out.push_str("\n\n\n");
-    Job::new(&structure, out, plot).run(lines)
+    let s = &structure;
+    let segment = |i: usize| Segment {
+        tag: s.itag[i],
+        end1: [s.x1[i], s.y1[i], s.z1[i]],
+        end2: [s.x2[i], s.y2[i], s.z2[i]],
+        radius: s.bi[i],
+    };
+    jobs.push(JobResults { segments: (0..s.n()).map(segment).collect(), solutions: Vec::new() });
+    let results = jobs.last_mut().expect("the job that was just added");
+    Job::new(&structure, out, plot, results).run(lines)
 }
 
 /// Reads the geometry section up to the GE card and prints the structure
@@ -659,6 +743,8 @@ struct Job<'a> {
     /// to plot (1 currents, 2 near fields, 3 patterns) and in which form.
     plot: &'a mut Option<String>,
     plot_flags: [i32; 4],
+    /// The numbers of the job, collected as the report is written.
+    results: &'a mut JobResults,
     structure: &'a Structure,
     engine: Engine,
     mpcnt: i32,
@@ -752,11 +838,17 @@ enum Trigger {
 }
 
 impl<'a> Job<'a> {
-    fn new(structure: &'a Structure, out: &'a mut String, plot: &'a mut Option<String>) -> Self {
+    fn new(
+        structure: &'a Structure,
+        out: &'a mut String,
+        plot: &'a mut Option<String>,
+        results: &'a mut JobResults,
+    ) -> Self {
         Job {
             out,
             plot,
             plot_flags: [0; 4],
+            results,
             structure,
             engine: Engine::new(structure),
             mpcnt: 0,
@@ -1838,6 +1930,15 @@ impl<'a> Job<'a> {
             .collect();
         let report = self.engine.solve(&networks, self.masym != 0, self.ntsol)?;
         self.ntsol = true;
+        self.results.solutions.push(Solution {
+            frequency: self.fmhz,
+            incident_wave: (1..=3).contains(&ixtyp).then_some([xpr1, xpr2, xpr3]),
+            sources: report.sources.clone(),
+            network_ports: report.network_ports.clone(),
+            currents: self.engine.currents().iter().map(|&current| current * wlam).collect(),
+            power: None,
+            patterns: Vec::new(),
+        });
 
         if let Some(asym) = report.asymmetry {
             let _ = write!(
@@ -1908,6 +2009,9 @@ impl<'a> Job<'a> {
             let pnls = self.engine.network_loss();
             let ploss = self.engine.structure_loss();
             let radiated = pin - pnls - ploss;
+            if let Some(solution) = self.results.solutions.last_mut() {
+                solution.power = Some(PowerBudget { input: pin, radiated, structure_loss: ploss, network_loss: pnls });
+            }
             let _ = write!(
                 self.out,
                 concat!(
@@ -2402,6 +2506,10 @@ impl<'a> Job<'a> {
         };
         let pattern = self.engine.radiation_pattern(&request);
         self.print_pattern(&pattern);
+        // The currents of the pattern are those of the last solution.
+        if let Some(solution) = self.results.solutions.last_mut() {
+            solution.patterns.push(pattern);
+        }
     }
 
     fn print_pattern(&mut self, pattern: &RadiationPattern) {
