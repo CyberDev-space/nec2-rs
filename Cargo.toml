@@ -8,6 +8,9 @@ edition = "2024"
 rust-version = "1.85"
 license = "MIT"
 repository = "https://github.com/CyberDev-space/nec2-rs"
+readme = "README.md"
+keywords = ["nec2", "antenna", "electromagnetics", "method-of-moments", "ham-radio"]
+categories = ["science", "simulation"]
 
 [workspace.dependencies]
 num-complex = "0.4"

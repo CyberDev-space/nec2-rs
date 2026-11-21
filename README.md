@@ -6,7 +6,7 @@ It is a port of nec2c 1.3.1, the public-domain C translation of NEC-2, checked r
 
 ## Status
 
-Working and tested. It is not on crates.io yet: build it from this repository.
+Working and tested. The first release, 0.1.0, is on crates.io.
 
 | Feature | State |
 |---|---|
@@ -33,18 +33,35 @@ nec2-rs is meant to replace NEC-2 engines without surprises. A deck that NEC-2 s
 
 | Crate | Contents |
 |---|---|
-| `nec2` | the engine: wires and patches, matrix fill and solution, fields. Computation only: no files, no threads. |
-| `nec2-deck` | reads a deck of NEC cards, runs it and returns the report in the nec2c layout, and the plot data |
-| `nec2-cli` | the command `nec2 -i deck.nec [-o report.out] [--overlap error\|warn\|off]` |
+| [`nec2`](https://crates.io/crates/nec2) | the engine: wires and patches, matrix fill and solution, fields. Computation only: no files, no threads. |
+| [`nec2-deck`](https://crates.io/crates/nec2-deck) | reads a deck of NEC cards, runs it and returns the report in the nec2c layout, and the plot data |
+| [`nec2-cli`](https://crates.io/crates/nec2-cli) | the command `nec2 -i deck.nec [-o report.out] [--overlap error\|warn\|off]` |
 
 ## Use
+
+The command:
+
+```sh
+cargo install nec2-cli
+nec2 -i deck.nec -o report.out
+```
+
+Or from this repository:
 
 ```sh
 cargo build --release
 ./target/release/nec2 -i tests/fixtures/decks/s1_dipole.nec -o dipole.out
 ```
 
-From Rust:
+From Rust, a deck with `nec2-deck`:
+
+```rust
+let deck = std::fs::read_to_string("deck.nec")?;
+let output = nec2_deck::run(&deck);
+print!("{}", output.report);
+```
+
+Or the engine itself, with `nec2` and `num-complex`:
 
 ```rust
 use nec2::{Engine, Excitation, Geometry};
@@ -63,7 +80,7 @@ let report = engine.solve(&[], false, false)?;
 println!("{}", report.sources[0].impedance);
 ```
 
-The engine API follows the routines of NEC-2 and will change before the first release.
+The engine API follows the routines of NEC-2 and will change before version 1.0.
 
 ## Tests
 

@@ -6,10 +6,14 @@ edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories = ["command-line-utilities", "science"]
 
 [[bin]]
 name = "nec2"
 path = "src/main.rs"
+doc = false
 
 [dependencies]
 nec2-deck.workspace = true
