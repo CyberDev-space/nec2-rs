@@ -1,0 +1,11 @@
+CM Dipole with lumped loads: series RLC, parallel RLC and a fixed impedance
+CE
+GW 1 21 0 0 -0.25 0 0 0.25 0.001
+GE 0
+LD 0 1 5 5 50 1e-7 1e-11
+LD 1 1 17 17 1000 2e-7 2e-12
+LD 4 1 8 8 10 -30
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 1 1000 0 0 10 0
+EN

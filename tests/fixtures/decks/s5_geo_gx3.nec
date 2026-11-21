@@ -1,0 +1,9 @@
+CM Eight short wires produced by reflection in all three coordinate planes
+CE
+GW 1 5 0.05 0.05 0.05 0.2 0.2 0.25 0.001
+GX 1 111
+GE 0
+EX 0 1 3 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 4 1000 0 0 30 45
+EN

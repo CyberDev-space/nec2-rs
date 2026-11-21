@@ -1,0 +1,15 @@
+[package]
+name = "nec2-cli"
+description = "Command-line NEC-2 solver that prints nec2c-style reports"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "nec2"
+path = "src/main.rs"
+
+[dependencies]
+nec2-deck.workspace = true

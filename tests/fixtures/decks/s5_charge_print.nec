@@ -1,0 +1,11 @@
+CM Dipole with charge densities printed (PQ) and currents limited to one tag (PT)
+CE
+GW 1 11 0 0 -0.25 0 0 0.25 0.001
+GW 2 11 0.2 0 -0.2 0.2 0 0.2 0.001
+GE 0
+PQ 0 0 0 0
+PT 0 2 1 11
+EX 0 1 6 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

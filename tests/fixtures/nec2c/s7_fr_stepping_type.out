@@ -1,0 +1,203 @@
+
+
+
+                               __________________________________________
+                              |                                          |
+                              |  NUMERICAL ELECTROMAGNETICS CODE (nec2c) |
+                              |   Translated to 'C' in Double Precision  |
+                              |__________________________________________|
+
+
+
+                               ---------------- COMMENTS ----------------
+                               A stepping type on FR other than 0 and 1: NEC-2 adds the step
+                              
+
+
+
+                               -------- STRUCTURE SPECIFICATION --------
+                                     COORDINATES MUST BE INPUT IN
+                                     METERS OR BE SCALED TO METERS
+                                     BEFORE STRUCTURE INPUT IS ENDED
+
+  WIRE                                                                                 SEG FIRST  LAST  TAG
+   No:        X1         Y1         Z1         X2         Y2         Z2       RADIUS   No:   SEG   SEG  No:
+     1     0.00000    0.00000   -0.25000    0.00000    0.00000    0.25000    0.00100     9     1     9    1
+
+     TOTAL SEGMENTS USED: 9   SEGMENTS IN A SYMMETRIC CELL: 9   SYMMETRY FLAG: 0
+
+
+                               ---------- SEGMENTATION DATA ----------
+                                        COORDINATES IN METERS
+                            I+ AND I- INDICATE THE SEGMENTS BEFORE AND AFTER I
+
+   SEG    COORDINATES OF SEGM CENTER     SEGM    ORIENTATION ANGLES    WIRE    CONNECTION DATA   TAG
+   No:       X         Y         Z      LENGTH     ALPHA      BETA    RADIUS    I-     I    I+   No:
+     1    0.0000    0.0000   -0.2222    0.0556   90.0000    0.0000    0.0010     0     1     2     1
+     2    0.0000    0.0000   -0.1667    0.0556   90.0000    0.0000    0.0010     1     2     3     1
+     3    0.0000    0.0000   -0.1111    0.0556   90.0000    0.0000    0.0010     2     3     4     1
+     4    0.0000    0.0000   -0.0556    0.0556   90.0000    0.0000    0.0010     3     4     5     1
+     5    0.0000    0.0000   -0.0000    0.0556   90.0000    0.0000    0.0010     4     5     6     1
+     6    0.0000    0.0000    0.0556    0.0556   90.0000    0.0000    0.0010     5     6     7     1
+     7    0.0000    0.0000    0.1111    0.0556   90.0000    0.0000    0.0010     6     7     8     1
+     8    0.0000    0.0000    0.1667    0.0556   90.0000    0.0000    0.0010     7     8     9     1
+     9    0.0000    0.0000    0.2222    0.0556   90.0000    0.0000    0.0010     8     9     0     1
+
+
+
+  DATA CARD No:   1 EX   0     1     5     0  1.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   2 FR   2     3     0     0  2.80000E+02  1.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   3 XQ   0     0     0     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+
+                               --------- FREQUENCY --------
+                                FREQUENCY : 2.8000E+02 MHz
+                                WAVELENGTH: 1.0707E+00 Mtr
+
+                        APPROXIMATE INTEGRATION EMPLOYED FOR SEGMENTS 
+                        THAT ARE MORE THAN 1.000 WAVELENGTHS APART
+
+
+                          ------ STRUCTURE IMPEDANCE LOADING ------
+                                 THIS STRUCTURE IS NOT LOADED
+
+
+                            -------- ANTENNA ENVIRONMENT --------
+                            FREE SPACE
+
+
+                             ---------- MATRIX TIMING ----------
+                               FILL: 0 msec  FACTOR: 0 msec
+
+
+                        --------- ANTENNA INPUT PARAMETERS ---------
+  TAG   SEG       VOLTAGE (VOLTS)         CURRENT (AMPS)         IMPEDANCE (OHMS)        ADMITTANCE (MHOS)     POWER
+  No:   No:     REAL      IMAGINARY     REAL      IMAGINARY     REAL      IMAGINARY    REAL       IMAGINARY   (WATTS)
+    1     5  1.0000E+00  0.0000E+00  1.3889E-02  3.3089E-03  6.8135E+01 -1.6233E+01  1.3889E-02  3.3089E-03  6.9443E-03
+
+
+                           -------- CURRENTS AND LOCATION --------
+                                  DISTANCES IN WAVELENGTHS
+
+   SEG  TAG    COORDINATES OF SEGM CENTER     SEGM    ------------- CURRENT (AMPS) -------------
+   No:  No:       X         Y         Z      LENGTH     REAL      IMAGINARY    MAGN        PHASE
+     1    1    0.0000    0.0000   -0.2075   0.05189  2.9589E-03  4.0551E-04  2.9865E-03    7.804
+     2    1    0.0000    0.0000   -0.1557   0.05189  7.5418E-03  1.1702E-03  7.6321E-03    8.820
+     3    1    0.0000    0.0000   -0.1038   0.05189  1.0971E-02  1.9435E-03  1.1142E-02   10.046
+     4    1    0.0000    0.0000   -0.0519   0.05189  1.3143E-02  2.7140E-03  1.3421E-02   11.667
+     5    1    0.0000    0.0000   -0.0000   0.05189  1.3889E-02  3.3089E-03  1.4277E-02   13.401
+     6    1    0.0000    0.0000    0.0519   0.05189  1.3143E-02  2.7140E-03  1.3421E-02   11.667
+     7    1    0.0000    0.0000    0.1038   0.05189  1.0971E-02  1.9435E-03  1.1142E-02   10.046
+     8    1    0.0000    0.0000    0.1557   0.05189  7.5418E-03  1.1702E-03  7.6321E-03    8.820
+     9    1    0.0000    0.0000    0.2075   0.05189  2.9589E-03  4.0551E-04  2.9865E-03    7.804
+
+
+                               ---------- POWER BUDGET ---------
+                               INPUT POWER   =  6.9443E-03 Watts
+                               RADIATED POWER=  6.9443E-03 Watts
+                               STRUCTURE LOSS=  0.0000E+00 Watts
+                               NETWORK LOSS  =  0.0000E+00 Watts
+                               EFFICIENCY    =  100.00 Percent
+
+
+                               --------- FREQUENCY --------
+                                FREQUENCY : 2.9000E+02 MHz
+                                WAVELENGTH: 1.0338E+00 Mtr
+
+                        APPROXIMATE INTEGRATION EMPLOYED FOR SEGMENTS 
+                        THAT ARE MORE THAN 1.000 WAVELENGTHS APART
+
+
+                          ------ STRUCTURE IMPEDANCE LOADING ------
+                                 THIS STRUCTURE IS NOT LOADED
+
+
+                            -------- ANTENNA ENVIRONMENT --------
+                            FREE SPACE
+
+
+                             ---------- MATRIX TIMING ----------
+                               FILL: 0 msec  FACTOR: 0 msec
+
+
+                        --------- ANTENNA INPUT PARAMETERS ---------
+  TAG   SEG       VOLTAGE (VOLTS)         CURRENT (AMPS)         IMPEDANCE (OHMS)        ADMITTANCE (MHOS)     POWER
+  No:   No:     REAL      IMAGINARY     REAL      IMAGINARY     REAL      IMAGINARY    REAL       IMAGINARY   (WATTS)
+    1     5  1.0000E+00  0.0000E+00  1.2706E-02 -2.6519E-03  7.5417E+01  1.5740E+01  1.2706E-02 -2.6519E-03  6.3531E-03
+
+
+                           -------- CURRENTS AND LOCATION --------
+                                  DISTANCES IN WAVELENGTHS
+
+   SEG  TAG    COORDINATES OF SEGM CENTER     SEGM    ------------- CURRENT (AMPS) -------------
+   No:  No:       X         Y         Z      LENGTH     REAL      IMAGINARY    MAGN        PHASE
+     1    1    0.0000    0.0000   -0.2150   0.05374  2.6737E-03 -8.6776E-04  2.8110E-03  -17.981
+     2    1    0.0000    0.0000   -0.1612   0.05374  6.8528E-03 -2.0801E-03  7.1615E-03  -16.885
+     3    1    0.0000    0.0000   -0.1075   0.05374  1.0007E-02 -2.7844E-03  1.0387E-02  -15.549
+     4    1    0.0000    0.0000   -0.0537   0.05374  1.2016E-02 -2.9408E-03  1.2370E-02  -13.753
+     5    1    0.0000    0.0000   -0.0000   0.05374  1.2706E-02 -2.6519E-03  1.2980E-02  -11.789
+     6    1    0.0000    0.0000    0.0537   0.05374  1.2016E-02 -2.9408E-03  1.2370E-02  -13.753
+     7    1    0.0000    0.0000    0.1075   0.05374  1.0007E-02 -2.7844E-03  1.0387E-02  -15.549
+     8    1    0.0000    0.0000    0.1612   0.05374  6.8528E-03 -2.0801E-03  7.1615E-03  -16.885
+     9    1    0.0000    0.0000    0.2150   0.05374  2.6737E-03 -8.6776E-04  2.8110E-03  -17.981
+
+
+                               ---------- POWER BUDGET ---------
+                               INPUT POWER   =  6.3531E-03 Watts
+                               RADIATED POWER=  6.3531E-03 Watts
+                               STRUCTURE LOSS=  0.0000E+00 Watts
+                               NETWORK LOSS  =  0.0000E+00 Watts
+                               EFFICIENCY    =  100.00 Percent
+
+
+                               --------- FREQUENCY --------
+                                FREQUENCY : 3.0000E+02 MHz
+                                WAVELENGTH: 9.9933E-01 Mtr
+
+                        APPROXIMATE INTEGRATION EMPLOYED FOR SEGMENTS 
+                        THAT ARE MORE THAN 1.000 WAVELENGTHS APART
+
+
+                          ------ STRUCTURE IMPEDANCE LOADING ------
+                                 THIS STRUCTURE IS NOT LOADED
+
+
+                            -------- ANTENNA ENVIRONMENT --------
+                            FREE SPACE
+
+
+                             ---------- MATRIX TIMING ----------
+                               FILL: 0 msec  FACTOR: 0 msec
+
+
+                        --------- ANTENNA INPUT PARAMETERS ---------
+  TAG   SEG       VOLTAGE (VOLTS)         CURRENT (AMPS)         IMPEDANCE (OHMS)        ADMITTANCE (MHOS)     POWER
+  No:   No:     REAL      IMAGINARY     REAL      IMAGINARY     REAL      IMAGINARY    REAL       IMAGINARY   (WATTS)
+    1     5  1.0000E+00  0.0000E+00  9.0603E-03 -5.1499E-03  8.3420E+01  4.7416E+01  9.0603E-03 -5.1499E-03  4.5301E-03
+
+
+                           -------- CURRENTS AND LOCATION --------
+                                  DISTANCES IN WAVELENGTHS
+
+   SEG  TAG    COORDINATES OF SEGM CENTER     SEGM    ------------- CURRENT (AMPS) -------------
+   No:  No:       X         Y         Z      LENGTH     REAL      IMAGINARY    MAGN        PHASE
+     1    1    0.0000    0.0000   -0.2224   0.05559  1.8824E-03 -1.3900E-03  2.3400E-03  -36.443
+     2    1    0.0000    0.0000   -0.1668   0.05559  4.8522E-03 -3.4313E-03  5.9428E-03  -35.267
+     3    1    0.0000    0.0000   -0.1112   0.05559  7.1137E-03 -4.7652E-03  8.5622E-03  -33.817
+     4    1    0.0000    0.0000   -0.0556   0.05559  8.5613E-03 -5.3153E-03  1.0077E-02  -31.834
+     5    1    0.0000    0.0000   -0.0000   0.05559  9.0603E-03 -5.1499E-03  1.0422E-02  -29.614
+     6    1    0.0000    0.0000    0.0556   0.05559  8.5613E-03 -5.3153E-03  1.0077E-02  -31.834
+     7    1    0.0000    0.0000    0.1112   0.05559  7.1137E-03 -4.7652E-03  8.5622E-03  -33.817
+     8    1    0.0000    0.0000    0.1668   0.05559  4.8522E-03 -3.4313E-03  5.9428E-03  -35.267
+     9    1    0.0000    0.0000    0.2224   0.05559  1.8824E-03 -1.3900E-03  2.3400E-03  -36.443
+
+
+                               ---------- POWER BUDGET ---------
+                               INPUT POWER   =  4.5301E-03 Watts
+                               RADIATED POWER=  4.5301E-03 Watts
+                               STRUCTURE LOSS=  0.0000E+00 Watts
+                               NETWORK LOSS  =  0.0000E+00 Watts
+                               EFFICIENCY    =  100.00 Percent
+  DATA CARD No:   4 EN   0     0     0     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+  TOTAL RUN TIME: 0 msec

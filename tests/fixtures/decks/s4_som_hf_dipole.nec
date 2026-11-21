@@ -1,0 +1,9 @@
+CM 20 m band dipole 3 m above average ground, Sommerfeld-Norton
+CE
+GW 1 21 0 -5.05 3 0 5.05 3 0.001
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 11 0 1 0
+FR 0 3 0 0 13.9 0.3
+RP 0 10 2 1000 0 0 10 90
+EN

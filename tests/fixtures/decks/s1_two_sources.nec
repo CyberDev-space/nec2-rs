@@ -1,0 +1,10 @@
+CM Two dipoles a quarter wave apart fed in quadrature
+CE
+GW 1 11 0 0 -0.25 0 0 0.25 0.001
+GW 2 11 0.25 0 -0.25 0.25 0 0.25 0.001
+GE 0
+EX 0 1 6 0 1 0
+EX 0 2 6 0 0 -1
+FR 0 1 0 0 299.8 0
+RP 0 1 13 1000 90 0 0 30
+EN

@@ -1,0 +1,12 @@
+CM GM that moves only the wires from tag 2 on, then copies them with a tag increment
+CE
+GW 1 9 0 0 -0.25 0 0 0.25 0.001
+GW 2 7 0.2 0 -0.2 0.2 0 0.2 0.001
+GW 3 5 0.4 0 -0.15 0.4 0 0.15 0.001
+GM 0 0 0 0 20 0 0.1 0 2
+GM 3 1 0 10 0 0.1 0.3 0 2
+GE 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1000 0 0 30 90
+EN

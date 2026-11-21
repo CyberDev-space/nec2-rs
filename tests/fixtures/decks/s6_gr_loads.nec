@@ -1,0 +1,12 @@
+CM Three loaded monopoles by rotation, on perfect ground; the loads follow the symmetry
+CE
+GW 1 8 0.2 0 0 0.2 0 0.25 0.001
+GR 1 3
+GE 1
+GN 1
+LD 0 1 3 3 25 0 0
+LD 5 1 0 0 3.72e7
+EX 0 1 1 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 3 1000 0 0 15 60
+EN

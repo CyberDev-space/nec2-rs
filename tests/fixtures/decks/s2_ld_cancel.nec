@@ -1,0 +1,11 @@
+CM Copper-loss dipole, then the same dipole after LD -1 removes all loads
+CE
+GW 1 11 0 0 -0.25 0 0 0.25 0.0005
+GE 0
+LD 5 0 0 0 5.8e7
+EX 0 1 6 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+LD -1
+XQ 0
+EN

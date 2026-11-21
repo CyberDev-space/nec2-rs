@@ -1,0 +1,10 @@
+CM PT and PQ ranges that reach beyond the last segment print the segments that exist
+CE
+GW 1 9 0 0 1 0 0 1.5 0.001
+GE 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+PT 0 0 5 99
+PQ 0 1 7 99
+XQ 0
+EN

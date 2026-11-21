@@ -1,0 +1,8 @@
+CM GE 1 without a ground card and no wire on the plane: a free-space run
+CE
+GW 1 9 0 0 1 0 0 1.5 0.001
+GE 1
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1001 0 0 30 90
+EN

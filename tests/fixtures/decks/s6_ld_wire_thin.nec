@@ -1,0 +1,9 @@
+CM 80 m band dipole of very thin steel wire: current fills the whole cross-section (zint argument below 8)
+CE
+GW 1 21 0 -20 0 0 20 0 0.0001
+GE 0
+LD 5 0 0 0 1.0e6
+EX 0 1 11 0 1 0
+FR 0 1 0 0 3.6 0
+XQ 0
+EN

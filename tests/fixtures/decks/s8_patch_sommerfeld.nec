@@ -1,0 +1,11 @@
+CM Plate of patches and a dipole over a Sommerfeld ground
+CE
+SM 3 3 -0.3 -0.3 0.5 0.3 -0.3 0.5
+SC 0 0 0.3 0.3 0.5
+GW 1 7 -0.2 0 0.7 0.2 0 0.7 0.002
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 4 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 4 2 1000 0 0 30 90
+EN

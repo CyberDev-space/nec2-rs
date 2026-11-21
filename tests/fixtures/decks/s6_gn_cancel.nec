@@ -1,0 +1,13 @@
+CM Finite ground, then GN -1 back to free space, then perfect ground
+CE
+GW 1 11 0 -0.25 0.3 0 0.25 0.3 0.001
+GE 0
+GN 0 0 0 0 13 0.005
+EX 0 1 6 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 4 1 1000 0 0 30 0
+GN -1
+RP 0 4 1 1000 0 0 30 0
+GN 1
+RP 0 4 1 1000 0 0 30 0
+EN

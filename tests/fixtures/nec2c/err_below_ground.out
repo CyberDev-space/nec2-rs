@@ -1,0 +1,30 @@
+
+
+
+                               __________________________________________
+                              |                                          |
+                              |  NUMERICAL ELECTROMAGNETICS CODE (nec2c) |
+                              |   Translated to 'C' in Double Precision  |
+                              |__________________________________________|
+
+
+
+                               ---------------- COMMENTS ----------------
+                               A wire that reaches below the ground plane
+                              
+
+
+
+                               -------- STRUCTURE SPECIFICATION --------
+                                     COORDINATES MUST BE INPUT IN
+                                     METERS OR BE SCALED TO METERS
+                                     BEFORE STRUCTURE INPUT IS ENDED
+
+  WIRE                                                                                 SEG FIRST  LAST  TAG
+   No:        X1         Y1         Z1         X2         Y2         Z2       RADIUS   No:   SEG   SEG  No:
+     1     0.00000    0.00000   -0.10000    0.00000    0.00000    0.25000    0.00100     5     1     5    1
+
+     GROUND PLANE SPECIFIED.
+     WHERE WIRE ENDS TOUCH GROUND, CURRENT WILL BE INTERPOLATED TO IMAGE IN GROUND PLANE.
+
+  GEOMETRY DATA ERROR -- SEGMENT 1 EXTENDS BELOW GROUND

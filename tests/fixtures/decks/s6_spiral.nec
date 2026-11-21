@@ -1,0 +1,9 @@
+CM Left-handed conical spiral (GH with negative length and changing radius) with a feed wire
+CE
+GH 1 40 0.1 -0.4 0.02 0.02 0.1 0.1 0.001
+GW 2 2 0 0 0 0 0.02 0 0.001
+GE 0
+EX 0 2 1 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1000 0 0 30 90
+EN

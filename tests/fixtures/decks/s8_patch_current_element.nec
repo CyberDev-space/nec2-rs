@@ -1,0 +1,10 @@
+CM Current element above three patches
+CE
+SP 0 0 -0.2 0 0 90 0 0.01
+SP 0 0 0 0 0 90 0 0.01
+SP 0 0 0.2 0 0 90 0 0.01
+GE 0
+EX 4 0 0 0 0 0 0.1 0 0 1
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

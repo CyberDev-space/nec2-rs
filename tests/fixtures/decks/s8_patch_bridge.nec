@@ -1,0 +1,12 @@
+CM Wire between the centres of two plates of patches
+CE
+SM 3 3 -0.3 -0.3 0 0.3 -0.3 0
+SC 0 0 0.3 0.3 0
+SM 3 3 -0.3 -0.3 0.3 0.3 -0.3 0.3
+SC 0 0 0.3 0.3 0.3
+GW 1 5 0 0 0 0 0 0.3 0.002
+GE 0
+EX 0 1 3 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

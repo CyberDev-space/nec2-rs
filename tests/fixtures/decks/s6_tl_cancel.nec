@@ -1,0 +1,12 @@
+CM Transmission line between two dipoles, then the networks are removed
+CE
+GW 1 11 0 0 -0.25 0 0 0.25 0.001
+GW 2 11 0.25 0 -0.25 0.25 0 0.25 0.001
+GE 0
+EX 0 1 6 0 1 0
+TL 1 6 2 6 50 0 0 0 0 0
+FR 0 1 0 0 299.8 0
+XQ 0
+TL 0 -1
+XQ 0
+EN

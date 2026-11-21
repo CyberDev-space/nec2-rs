@@ -1,0 +1,8 @@
+CM Frequency sweep with the impedance table normalized to its maximum
+CE
+GW 1 15 0 0 -0.25 0 0 0.25 0.002
+GE 0
+EX 0 1 8 1 1 0
+FR 0 4 0 0 270 20
+XQ 0
+EN

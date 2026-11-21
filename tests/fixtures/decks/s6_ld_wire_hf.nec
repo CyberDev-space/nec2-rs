@@ -1,0 +1,9 @@
+CM 20 m band dipole of copper wire: skin depth comparable to the radius (zint argument between 8 and 110)
+CE
+GW 1 21 0 -5.05 0 0 5.05 0 0.001
+GE 0
+LD 5 0 0 0 5.8e7
+EX 0 1 11 0 1 0
+FR 0 1 0 0 14.2 0
+XQ 0
+EN

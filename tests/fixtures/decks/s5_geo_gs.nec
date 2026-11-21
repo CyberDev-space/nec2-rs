@@ -1,0 +1,9 @@
+CM Dipole entered in inches and scaled to metres with GS
+CE
+GW 1 21 0 0 -9.84 0 0 9.84 0.04
+GS 0 0 0.0254
+GE 0
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 1 1000 0 0 10 0
+EN

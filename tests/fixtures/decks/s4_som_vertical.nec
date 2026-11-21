@@ -1,0 +1,9 @@
+CM Vertical dipole just above sea water, Sommerfeld-Norton
+CE
+GW 1 15 0 0 0.02 0 0 0.52 0.001
+GE 0
+GN 2 0 0 0 80 5
+EX 0 1 8 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 1 1000 0 0 10 0
+EN

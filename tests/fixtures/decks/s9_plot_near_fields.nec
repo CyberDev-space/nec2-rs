@@ -1,0 +1,11 @@
+CM Plot file: near electric field as magnitude and phase, near magnetic field as real and imaginary parts
+CE
+GW 1 5 0 0 -0.25 0 0 0.25 0.001
+GE 0
+EX 0 1 3 0 1 0
+FR 0 1 0 0 299.8 0
+PL 2 2 1 1
+NE 0 1 1 3 0.2 0 0 0 0 0.1
+PL 2 1 2 0
+NH 0 1 3 1 0.2 0 0 0 0.1 0
+EN

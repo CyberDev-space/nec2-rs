@@ -1,0 +1,9 @@
+CM Horizontal dipole very close to perfect ground
+CE
+GW 1 21 0 -0.25 0.02 0 0.25 0.02 0.001
+GE 1
+GN 1
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 2 1000 0 0 10 90
+EN

@@ -1,0 +1,14 @@
+CM Coupling between a wire on a patch and another wire
+CE
+SM 3 3 -0.3 -0.3 0 0.3 -0.3 0
+SC 0 0 0.3 0.3 0
+GW 1 5 0 0 0 0 0 0.25 0.002
+GW 2 5 0.6 0 0.05 0.6 0 0.3 0.002
+GE 0
+CP 1 1 2 3
+EX 0 1 1 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EX 0 2 3 0 1 0
+XQ 0
+EN

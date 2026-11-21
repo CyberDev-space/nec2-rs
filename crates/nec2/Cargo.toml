@@ -1,0 +1,11 @@
+[package]
+name = "nec2"
+description = "NEC-2 antenna modeling engine (method of moments for thin wires)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+num-complex.workspace = true

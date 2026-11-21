@@ -1,0 +1,9 @@
+CM Two wires that cross without a junction: a segment centre of the thin wire lies on the axis of the fat one
+CE
+GW 1 9 0 0 -0.25 0 0 0.25 0.01
+GW 2 10 -0.225 0 0.1 0.275 0 0.1 0.001
+GE 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1001 0 0 30 90
+EN

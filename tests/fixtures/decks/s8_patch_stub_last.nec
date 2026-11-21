@@ -1,0 +1,11 @@
+CM One-segment wire on a patch, entered after another wire
+CE
+SM 3 3 -0.3 -0.3 0 0.3 -0.3 0
+SC 0 0 0.3 0.3 0
+GW 2 3 0.6 0 0.1 0.6 0 0.4 0.002
+GW 1 1 0 0 0 0 0 0.05 0.002
+GE 0
+EX 0 1 1 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

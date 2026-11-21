@@ -1,0 +1,21 @@
+[workspace]
+resolver = "3"
+members = ["crates/nec2", "crates/nec2-deck", "crates/nec2-cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+repository = "https://github.com/CyberDev-space/nec2-rs"
+
+[workspace.dependencies]
+num-complex = "0.4"
+nec2 = { path = "crates/nec2", version = "0.1.0" }
+nec2-deck = { path = "crates/nec2-deck", version = "0.1.0" }
+
+[profile.release]
+debug = 1
+
+[profile.test]
+opt-level = 2

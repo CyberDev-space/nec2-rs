@@ -1,0 +1,10 @@
+CM Plot file: patch currents, all components
+CE
+SM 2 1 0 0 0 0.2 0 0
+SC 0 0 0.2 0.1 0
+GE 0
+EX 1 1 1 0 30 0 0
+FR 0 1 0 0 299.8 0
+PL 1 1 4 0
+XQ 0
+EN

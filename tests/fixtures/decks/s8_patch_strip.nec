@@ -1,0 +1,11 @@
+CM Strip of three quadrilateral patches entered with one SP card and three SC cards, plane wave excitation
+CE
+SP 0 3 0 0 0 0.1 0 0
+SC 0 3 0.1 0.1 0 0 0.1 0
+SC 0 3 0.1 0.2 0 0 0.2 0
+SC 0 3 0.1 0.3 0 0 0.3 0
+GE 0
+EX 1 1 1 0 45 0 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

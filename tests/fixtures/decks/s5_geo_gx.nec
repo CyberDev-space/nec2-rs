@@ -1,0 +1,9 @@
+CM Two dipoles produced by reflection in the XZ plane (plane symmetry used in the solution)
+CE
+GW 1 11 0 0.15 -0.25 0 0.15 0.25 0.001
+GX 1 010
+GE 0
+EX 0 1 6 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 4 1000 0 0 30 45
+EN

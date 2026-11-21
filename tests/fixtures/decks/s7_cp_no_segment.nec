@@ -1,0 +1,10 @@
+CM A coupling card for segments that do not exist does no harm without a voltage source
+CE
+SM 3 3 -0.3 -0.3 0 0.3 -0.3 0
+SC 0 0 0.3 0.3 0
+GE 0
+CP 0 1 0 2
+EX 1 1 1 0 30 0 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

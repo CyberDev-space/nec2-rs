@@ -1,0 +1,11 @@
+CM Monopole on a patch with the extended kernel and a current-slope source
+CE
+SM 3 3 -0.3 -0.3 0 0.3 -0.3 0
+SC 0 0 0.3 0.3 0
+GW 1 5 0 0 0 0 0 0.25 0.004
+GE 0
+EK 0
+EX 5 1 3 0 1 0
+FR 0 1 0 0 299.8 0
+NE 0 1 1 2 0.1 0.1 0.1 0 0 0.2
+EN

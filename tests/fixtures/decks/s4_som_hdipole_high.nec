@@ -1,0 +1,9 @@
+CM Horizontal dipole 0.3 wavelength above poor ground, Sommerfeld-Norton
+CE
+GW 1 21 0 -0.25 0.3 0 0.25 0.3 0.001
+GE 0
+GN 2 0 0 0 4 0.001
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 3 1000 0 0 10 45
+EN

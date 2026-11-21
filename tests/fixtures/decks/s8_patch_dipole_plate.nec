@@ -1,0 +1,12 @@
+CM Dipole in front of a plate of patches, not connected
+CE
+SM 4 4 -0.4 -0.4 0 0.4 -0.4 0
+SC 0 0 0.4 0.4 0
+GW 1 9 -0.25 0 0.25 0.25 0 0.25 0.002
+GE 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1001 0 0 30 90
+NE 0 1 1 3 0.1 0.1 0.1 0 0 0.2
+NH 0 1 1 3 0.1 0.1 0.1 0 0 0.2
+EN

@@ -1,0 +1,8 @@
+CM A patch of no area is solved by NEC-2
+CE
+SP 0 0 0 0 0 90 0 0
+GE 0
+EX 1 1 1 0 30 0 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

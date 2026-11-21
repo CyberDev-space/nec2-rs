@@ -1,0 +1,10 @@
+CM Left-handed helix: NEC-2 exchanges x and y, so the helix starts at (0, A, 0) and the wire at (A, 0, 0) is not joined
+CE
+GH 1 16 0.1 -0.2 0.05 0.05 0.05 0.05 0.001
+GW 2 2 0.05 0 0 0.05 0 -0.05 0.001
+GW 3 2 0 0.05 0 0 0.05 -0.05 0.001
+GE 0
+EX 0 3 1 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

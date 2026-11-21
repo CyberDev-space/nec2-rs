@@ -1,0 +1,9 @@
+CM LD for segments 12 to 14 of a tag with 9 segments loads nothing
+CE
+GW 1 9 0 0 1 0 0 1.5 0.001
+GE 0
+LD 4 1 12 14 50 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

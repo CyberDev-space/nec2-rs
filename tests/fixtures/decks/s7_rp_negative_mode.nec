@@ -1,0 +1,10 @@
+CM Pattern modes below zero: with -1 NEC-2 computes no pattern, any other is taken as mode 0
+CE
+GW 1 9 0 0 0.1 0 0 0.6 0.001
+GE 0
+GN 1
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP -1 4 1 1000 0 0 25 0
+RP -2 4 1 1000 0 0 25 0
+EN

@@ -1,0 +1,12 @@
+CM Two wires with distributed loads: wire conductivity, series and parallel RLC per metre
+CE
+GW 1 21 0 0 -0.25 0 0 0.25 0.001
+GW 2 21 0.1 0 -0.2 0.1 0 0.2 0.001
+GE 0
+LD 5 1 0 0 3.72e7
+LD 2 2 1 10 100 1e-6 0
+LD 3 2 12 21 1e4 1e-5 1e-10
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 1 1000 0 0 10 0
+EN

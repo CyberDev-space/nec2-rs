@@ -1,0 +1,8 @@
+CM Dipole in free space, multiplicative frequency sweep, executed by XQ
+CE
+GW 1 15 0 0 -0.25 0 0 0.25 0.002
+GE 0
+EX 0 1 8 0 1 0
+FR 1 4 0 0 150 1.26
+XQ 0
+EN

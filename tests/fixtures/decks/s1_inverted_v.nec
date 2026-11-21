@@ -1,0 +1,10 @@
+CM Inverted V in free space: two wires that both start at the apex
+CM The source sits on the segment next to the junction
+CE
+GW 1 10 0 0 0 0 0.2165 -0.125 0.001
+GW 2 10 0 0 0 0 -0.2165 -0.125 0.001
+GE 0
+EX 0 1 1 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 10 2 1000 0 0 20 90
+EN

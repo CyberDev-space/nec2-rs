@@ -1,0 +1,10 @@
+CM Dipole copied twice with GM, then the whole array rotated and lifted
+CE
+GW 1 11 0 0 -0.25 0 0 0.25 0.001
+GM 1 2 0 0 0 0.3 0 0 0
+GM 0 0 0 0 30 0 0 0.1 0
+GE 0
+EX 0 2 6 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 4 1000 0 0 30 45
+EN

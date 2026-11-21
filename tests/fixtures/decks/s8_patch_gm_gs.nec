@@ -1,0 +1,13 @@
+CM Patches moved in place, copied and scaled
+CE
+SP 0 1 0 0 0 10 0 0
+SC 0 0 10 10 0
+GM 0 0 0 30 0 0 0 5
+GM 0 2 0 0 45 0 0 20
+GW 1 5 0 0 30 20 0 30 0.2
+GS 0 0 0.01
+GE 0
+EX 0 1 3 0 1 0
+FR 0 1 0 0 299.8 0
+XQ 0
+EN

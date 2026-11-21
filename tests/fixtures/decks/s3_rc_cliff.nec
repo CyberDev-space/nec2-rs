@@ -1,0 +1,10 @@
+CM Horizontal dipole over finite ground with a second medium: linear and circular cliff patterns
+CE
+GW 1 21 0 -0.25 0.3 0 0.25 0.3 0.001
+GE 0
+GN 0 0 0 0 13 0.005 80 4 2 0.5
+EX 0 1 11 0 1 0
+FR 0 1 0 0 299.8 0
+RP 2 10 2 1000 0 0 10 90
+RP 3 10 2 1000 0 0 10 90
+EN

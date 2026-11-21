@@ -1,0 +1,9 @@
+CM Three-turn helix with a short feed wire, free space
+CE
+GH 1 60 0.23 0.69 0.159 0.159 0.159 0.159 0.002
+GW 2 3 0 0 0 0.159 0 0 0.002
+GE 0
+EX 0 2 1 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1000 0 0 30 90
+EN

@@ -1,0 +1,12 @@
+CM PT ranges that select no segment print nothing
+CE
+GW 1 9 0 0 1 0 0 1.5 0.001
+GE 0
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+PT 0 0 50 60
+XQ 0
+PT 0 7 1 3
+PQ 0 1 30 40
+XQ 0
+EN

@@ -1,0 +1,158 @@
+
+
+
+                               __________________________________________
+                              |                                          |
+                              |  NUMERICAL ELECTROMAGNETICS CODE (nec2c) |
+                              |   Translated to 'C' in Double Precision  |
+                              |__________________________________________|
+
+
+
+                               ---------------- COMMENTS ----------------
+                               Plate of patches and a dipole over a Sommerfeld ground
+                              
+
+
+
+                               -------- STRUCTURE SPECIFICATION --------
+                                     COORDINATES MUST BE INPUT IN
+                                     METERS OR BE SCALED TO METERS
+                                     BEFORE STRUCTURE INPUT IS ENDED
+
+  WIRE                                                                                 SEG FIRST  LAST  TAG
+   No:        X1         Y1         Z1         X2         Y2         Z2       RADIUS   No:   SEG   SEG  No:
+     1R   -0.30000    -0.30000     0.50000     0.30000    -0.30000     0.50000     SURFACE - 3 BY 3 PATCHES
+          0.30000     0.30000     0.50000    -0.30000     0.30000     0.50000
+     1    -0.20000    0.00000    0.70000    0.20000    0.00000    0.70000    0.00200     7     1     7    1
+
+     TOTAL SEGMENTS USED: 7   SEGMENTS IN A SYMMETRIC CELL: 7   SYMMETRY FLAG: 0
+       TOTAL PATCHES USED: 9   PATCHES IN A SYMMETRIC CELL: 9
+
+
+                               ---------- SEGMENTATION DATA ----------
+                                        COORDINATES IN METERS
+                            I+ AND I- INDICATE THE SEGMENTS BEFORE AND AFTER I
+
+   SEG    COORDINATES OF SEGM CENTER     SEGM    ORIENTATION ANGLES    WIRE    CONNECTION DATA   TAG
+   No:       X         Y         Z      LENGTH     ALPHA      BETA    RADIUS    I-     I    I+   No:
+     1   -0.1714    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     0     1     2     1
+     2   -0.1143    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     1     2     3     1
+     3   -0.0571    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     2     3     4     1
+     4    0.0000    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     3     4     5     1
+     5    0.0571    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     4     5     6     1
+     6    0.1143    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     5     6     7     1
+     7    0.1714    0.0000    0.7000    0.0571    0.0000    0.0000    0.0020     6     7     0     1
+
+
+                                    --------- SURFACE PATCH DATA ---------
+                                             COORDINATES IN METERS
+
+ PATCH      COORD. OF PATCH CENTER           UNIT NORMAL VECTOR       PATCH           COMPONENTS OF UNIT TANGENT VECTORS
+  No:       X          Y          Z          X        Y        Z       AREA         X1       Y1       Z1        X2       Y2      Z2
+    1   -0.20000   -0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    2   -0.00000   -0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    3    0.20000   -0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    4   -0.20000   -0.00000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    5   -0.00000   -0.00000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    6    0.20000   -0.00000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    7   -0.20000    0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    8   -0.00000    0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    9    0.20000    0.20000    0.50000    0.0000   0.0000   1.0000    0.04000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+
+
+
+  DATA CARD No:   1 GN   2     0     0     0  1.30000E+01  5.00000E-03  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   2 EX   0     1     4     0  1.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   3 FR   0     1     0     0  2.99800E+02  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   4 RP   0     4     2  1000  0.00000E+00  0.00000E+00  3.00000E+01  9.00000E+01  0.00000E+00  0.00000E+00
+
+
+                               --------- FREQUENCY --------
+                                FREQUENCY : 2.9980E+02 MHz
+                                WAVELENGTH: 1.0000E+00 Mtr
+
+                        APPROXIMATE INTEGRATION EMPLOYED FOR SEGMENTS 
+                        THAT ARE MORE THAN 1.000 WAVELENGTHS APART
+
+
+                          ------ STRUCTURE IMPEDANCE LOADING ------
+                                 THIS STRUCTURE IS NOT LOADED
+
+
+                            -------- ANTENNA ENVIRONMENT --------
+                            FINITE GROUND - SOMMERFELD SOLUTION
+                            RELATIVE DIELECTRIC CONST: 13.000
+                            CONDUCTIVITY:  5.000E-03 MHOS/METER
+                            COMPLEX DIELECTRIC CONSTANT:  1.3000E+01-2.9980E-01j
+
+
+                             ---------- MATRIX TIMING ----------
+                               FILL: 0 msec  FACTOR: 0 msec
+
+
+                        --------- ANTENNA INPUT PARAMETERS ---------
+  TAG   SEG       VOLTAGE (VOLTS)         CURRENT (AMPS)         IMPEDANCE (OHMS)        ADMITTANCE (MHOS)     POWER
+  No:   No:     REAL      IMAGINARY     REAL      IMAGINARY     REAL      IMAGINARY    REAL       IMAGINARY   (WATTS)
+    1     4  1.0000E+00  0.0000E+00  4.5825E-03  9.4228E-03  4.1739E+01 -8.5827E+01  4.5825E-03  9.4228E-03  2.2912E-03
+
+
+                           -------- CURRENTS AND LOCATION --------
+                                  DISTANCES IN WAVELENGTHS
+
+   SEG  TAG    COORDINATES OF SEGM CENTER     SEGM    ------------- CURRENT (AMPS) -------------
+   No:  No:       X         Y         Z      LENGTH     REAL      IMAGINARY    MAGN        PHASE
+     1    1   -0.1714    0.0000    0.7000   0.05714  1.3200E-03  2.3134E-03  2.6635E-03   60.292
+     2    1   -0.1143    0.0000    0.7000   0.05714  3.1132E-03  5.6902E-03  6.4862E-03   61.316
+     3    1   -0.0571    0.0000    0.7000   0.05714  4.2059E-03  8.1310E-03  9.1543E-03   62.649
+     4    1    0.0000    0.0000    0.7000   0.05714  4.5825E-03  9.4228E-03  1.0478E-02   64.066
+     5    1    0.0571    0.0000    0.7000   0.05714  4.2059E-03  8.1310E-03  9.1543E-03   62.649
+     6    1    0.1143    0.0000    0.7000   0.05714  3.1132E-03  5.6902E-03  6.4862E-03   61.316
+     7    1    0.1714    0.0000    0.7000   0.05714  1.3200E-03  2.3134E-03  2.6635E-03   60.292
+
+
+                                       --------- SURFACE PATCH CURRENTS ---------
+                                                 DISTANCE IN WAVELENGTHS
+                                                 CURRENT IN AMPS/METER
+
+                                 --------- SURFACE COMPONENTS --------    ---------------- RECTANGULAR COMPONENTS ----------------
+  PCH   --- PATCH CENTER ---     TANGENT VECTOR 1     TANGENT VECTOR 2    ------- X ------    ------- Y ------    ------- Z ------
+  No:    X       Y       Z       MAG.       PHASE     MAG.       PHASE    REAL   IMAGINARY    REAL   IMAGINARY    REAL   IMAGINARY
+    1  -0.200  -0.200   0.500  5.1841E-03  -178.13  6.2005E-06   -88.93 -5.18E-03 -1.69E-04  1.16E-07 -6.20E-06  0.00E+00 -0.00E+00
+    2  -0.000  -0.200   0.500  7.2471E-03  -164.62  1.5936E-14   -36.90 -6.99E-03 -1.92E-03  1.27E-14 -9.57E-15  0.00E+00 -0.00E+00
+    3   0.200  -0.200   0.500  5.1841E-03  -178.13  6.2005E-06    91.07 -5.18E-03 -1.69E-04 -1.16E-07  6.20E-06 -0.00E+00  0.00E+00
+    4  -0.200  -0.000   0.500  8.4461E-03  -157.04  4.9342E-21    18.75 -7.78E-03 -3.29E-03  4.67E-21  1.59E-21  0.00E+00  0.00E+00
+    5  -0.000  -0.000   0.500  1.4424E-02  -143.09  2.8026E-21    61.98 -1.15E-02 -8.66E-03  1.32E-21  2.47E-21  0.00E+00  0.00E+00
+    6   0.200  -0.000   0.500  8.4461E-03  -157.04  1.8845E-21   115.37 -7.78E-03 -3.29E-03 -8.08E-22  1.70E-21 -0.00E+00  0.00E+00
+    7  -0.200   0.200   0.500  5.1841E-03  -178.13  6.2005E-06    91.07 -5.18E-03 -1.69E-04 -1.16E-07  6.20E-06 -0.00E+00  0.00E+00
+    8  -0.000   0.200   0.500  7.2471E-03  -164.62  1.5936E-14   143.10 -6.99E-03 -1.92E-03 -1.27E-14  9.57E-15 -0.00E+00  0.00E+00
+    9   0.200   0.200   0.500  5.1841E-03  -178.13  6.2005E-06   -88.93 -5.18E-03 -1.69E-04  1.16E-07 -6.20E-06  0.00E+00 -0.00E+00
+
+
+                               ---------- POWER BUDGET ---------
+                               INPUT POWER   =  2.2912E-03 Watts
+                               RADIATED POWER=  2.2912E-03 Watts
+                               STRUCTURE LOSS=  0.0000E+00 Watts
+                               NETWORK LOSS  =  0.0000E+00 Watts
+                               EFFICIENCY    =  100.00 Percent
+
+
+                             ---------- RADIATION PATTERNS -----------
+
+ ---- ANGLES -----     ----- POWER GAINS -----       ---- POLARIZATION ----   ---- E(THETA) ----    ----- E(PHI) ------
+  THETA      PHI       VERTC    HORIZ    TOTAL       AXIAL      TILT  SENSE   MAGNITUDE    PHASE    MAGNITUDE     PHASE
+ DEGREES   DEGREES        DB       DB       DB       RATIO   DEGREES            VOLTS/M   DEGREES     VOLTS/M   DEGREES
+    0.00      0.00      7.70  -999.99     7.70      0.0000     -0.00 LINEAR  8.9929E-01   -112.33  7.1294E-20    108.20
+   30.00      0.00      5.59  -999.99     5.59      0.0000     -0.00 LINEAR  7.0573E-01   -134.17  5.0881E-20     71.15
+   60.00      0.00     -3.44  -999.99    -3.44      0.0000      0.00 LINEAR  2.4932E-01    136.32  8.6527E-20    126.12
+   90.00      0.00   -999.99  -999.99  -999.99      0.0000      0.00         2.8590E-12   -163.52  9.9720E-21    -90.00
+    0.00     90.00   -999.99     7.70     7.70      0.0000     90.00 LINEAR  4.5894E-12     67.67  8.9929E-01     67.67
+   30.00     90.00   -999.99     7.23     7.23      0.0000     90.00 LINEAR  3.4901E-12     43.59  8.5156E-01     46.03
+   60.00     90.00   -999.99     3.12     3.12      0.0000     90.00 LINEAR  1.4175E-12    -62.82  5.3068E-01    -54.93
+   90.00     90.00   -999.99  -999.99  -999.99      0.0000      0.00         2.1084E-23     -5.08  1.6251E-11     82.03
+
+
+
+  DATA CARD No:   5 EN   0     0     0     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+  TOTAL RUN TIME: 10 msec

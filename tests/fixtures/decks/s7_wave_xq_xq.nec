@@ -1,0 +1,9 @@
+CM Plane wave from one direction, a second XQ does nothing
+CE
+GW 1 9 0 0 -0.25 0 0 0.25 0.001
+GE 0
+EX 1 1 1 0 60 0 0
+FR 0 1 0 0 299.8 0
+XQ 0
+XQ 0
+EN

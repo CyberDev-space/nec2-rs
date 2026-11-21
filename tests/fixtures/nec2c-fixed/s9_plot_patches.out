@@ -1,0 +1,86 @@
+
+
+
+                               __________________________________________
+                              |                                          |
+                              |  NUMERICAL ELECTROMAGNETICS CODE (nec2c) |
+                              |   Translated to 'C' in Double Precision  |
+                              |__________________________________________|
+
+
+
+                               ---------------- COMMENTS ----------------
+                               Plot file: patch currents, all components
+                              
+
+
+
+                               -------- STRUCTURE SPECIFICATION --------
+                                     COORDINATES MUST BE INPUT IN
+                                     METERS OR BE SCALED TO METERS
+                                     BEFORE STRUCTURE INPUT IS ENDED
+
+  WIRE                                                                                 SEG FIRST  LAST  TAG
+   No:        X1         Y1         Z1         X2         Y2         Z2       RADIUS   No:   SEG   SEG  No:
+     1R    0.00000     0.00000     0.00000     0.20000     0.00000     0.00000     SURFACE - 2 BY 1 PATCHES
+          0.20000     0.10000     0.00000     0.00000     0.10000     0.00000
+
+     TOTAL SEGMENTS USED: 0   SEGMENTS IN A SYMMETRIC CELL: 0   SYMMETRY FLAG: 0
+       TOTAL PATCHES USED: 2   PATCHES IN A SYMMETRIC CELL: 2
+
+
+                                    --------- SURFACE PATCH DATA ---------
+                                             COORDINATES IN METERS
+
+ PATCH      COORD. OF PATCH CENTER           UNIT NORMAL VECTOR       PATCH           COMPONENTS OF UNIT TANGENT VECTORS
+  No:       X          Y          Z          X        Y        Z       AREA         X1       Y1       Z1        X2       Y2      Z2
+    1    0.05000    0.05000    0.00000    0.0000   0.0000   1.0000    0.01000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+    2    0.15000    0.05000    0.00000    0.0000   0.0000   1.0000    0.01000    1.0000   0.0000   0.0000    0.0000   1.0000   0.0000
+
+
+
+  DATA CARD No:   1 EX   1     1     1     0  3.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   2 FR   0     1     0     0  2.99800E+02  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   3 PL   1     1     4     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+  DATA CARD No:   4 XQ   0     0     0     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+
+                               --------- FREQUENCY --------
+                                FREQUENCY : 2.9980E+02 MHz
+                                WAVELENGTH: 1.0000E+00 Mtr
+
+                        APPROXIMATE INTEGRATION EMPLOYED FOR SEGMENTS 
+                        THAT ARE MORE THAN 1.000 WAVELENGTHS APART
+
+
+                          ------ STRUCTURE IMPEDANCE LOADING ------
+                                 THIS STRUCTURE IS NOT LOADED
+
+
+                            -------- ANTENNA ENVIRONMENT --------
+                            FREE SPACE
+
+
+                             ---------- MATRIX TIMING ----------
+                               FILL: 0 msec  FACTOR: 0 msec
+
+
+                             ---------- EXCITATION ----------
+  PLANE WAVE - THETA:   30.00 deg, PHI:    0.00 deg, ETA=   0.00 DEG, TYPE - LINEAR  AXIAL RATIO:  0.000
+
+
+                                       --------- SURFACE PATCH CURRENTS ---------
+                                                 DISTANCE IN WAVELENGTHS
+                                                 CURRENT IN AMPS/METER
+
+                                 --------- SURFACE COMPONENTS --------    ---------------- RECTANGULAR COMPONENTS ----------------
+  PCH   --- PATCH CENTER ---     TANGENT VECTOR 1     TANGENT VECTOR 2    ------- X ------    ------- Y ------    ------- Z ------
+  No:    X       Y       Z       MAG.       PHASE     MAG.       PHASE    REAL   IMAGINARY    REAL   IMAGINARY    REAL   IMAGINARY
+    1   0.050   0.050   0.000  5.3088E-03     9.00  0.0000E+00     0.00  5.24E-03  8.30E-04  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    2   0.150   0.050   0.000  5.3088E-03    27.00  0.0000E+00     0.00  4.73E-03  2.41E-03  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+
+
+
+  DATA CARD No:   5 EN   0     0     0     0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+  TOTAL RUN TIME: 0 msec

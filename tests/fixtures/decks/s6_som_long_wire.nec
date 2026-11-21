@@ -1,0 +1,10 @@
+CM Long low wire over average ground: horizontal separations beyond 0.77 wavelength use the
+CM Sommerfeld integrals in the Hankel form with the contour between the branch cuts
+CE
+GW 1 41 -1.0 0 0.03 1.0 0 0.03 0.001
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 5 0 1 0
+FR 0 1 0 0 299.8 0
+RP 0 7 2 1000 0 0 15 90
+EN
