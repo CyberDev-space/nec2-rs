@@ -8,6 +8,8 @@ A Rust implementation of NEC-2, the Numerical Electromagnetics Code for wire ant
 
 It is a port of nec2c 1.3.1, the public-domain C translation of NEC-2, checked report by report against nec2c. The license is MIT.
 
+See it at work: the [antenna modeler](https://cyberdev.space/radio/antenna-modeler/) on [cyberdev.space](https://cyberdev.space/), the site of its author UR3PKI, runs on it in the browser through `nec2-wasm`.
+
 ## Status
 
 Working and tested. The releases are on crates.io and, for JavaScript, on npm.
